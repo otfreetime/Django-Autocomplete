@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block script %}
+    <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
+    <script>
+        $('.basicAutoComplete').autoComplete(
+            {minLength: 1}
+        );
+        $('.dropdown-menu').css({'top': 'auto', 'left': 'auto'})
+    
+    </script>
+{% endblock %}
+
+{% if field.name == "from_email" %}
+   {% render_field field class="basicAutoComplete form-control" %}
+{% else %}
+   {% render_field field class="form-control" %}
+{% endif %}

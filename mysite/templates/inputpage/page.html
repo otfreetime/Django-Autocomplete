@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    <a href="static/test-list.json">list of strings</a>
+    <input class="form-control basicAutoComplete" type="text" autocomplete="off">
+{% block script %}
+    <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
+    <script>
+        $(document).ready(function(){
+           $('.basicAutoComplete').autoComplete({
+               resolverSettings: {
+                   url: 'static/test-list.json'
+               }
+           });
+       });
+   </script>
+
+{% endblock script %}
+
+
+
+
+
+{% endblock content %}
